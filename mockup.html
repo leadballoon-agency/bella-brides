@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Brides Alterations - Wireframe Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .mockup-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Section Styling */
+        .section {
+            border: 2px dashed #ccc;
+            padding: 40px 60px;
+            margin-bottom: 2px;
+            position: relative;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #0F1B3C;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Color Palette Reference */
+        .color-palette {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-bottom: 3px solid #D4A574;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0F1B3C 0%, #1a2d5a 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 60px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Georgia', serif;
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #FAF7F2;
+        }
+
+        .hero .subheadline {
+            font-size: 20px;
+            color: #D4A574;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: #D4A574;
+            color: #0F1B3C;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #FAF7F2;
+            padding: 30px 60px;
+            text-align: center;
+            border-bottom: 1px solid #D4A574;
+        }
+
+        .trust-bar p {
+            font-size: 16px;
+            color: #2C2C2C;
+        }
+
+        /* Three Column Layout */
+        .three-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 80px 60px;
+        }
+
+        .column {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .column h3 {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            color: #0F1B3C;
+            margin-bottom: 15px;
+        }
+
+        /* Package Cards */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 80px 60px;
+            background: #FAF7F2;
+        }
+
+        .package-card {
+            background: white;
+            border: 2px solid #D4A574;
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .package-card.featured {
+            border: 3px solid #0F1B3C;
+            transform: scale(1.05);
+        }
+
+        .package-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            color: #0F1B3C;
+            margin-bottom: 10px;
+        }
+
+        .package-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #D4A574;
+            margin-bottom: 20px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .package-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #2C2C2C;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 80px 60px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #F5E6E0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0F1B3C;
+            font-size: 14px;
+        }
+
+        /* Process Steps */
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 80px 60px;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .process-step .step-number {
+            width: 80px;
+            height: 80px;
+            background: #0F1B3C;
+            color: #D4A574;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: #0F1B3C;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 60px;
+            background: #FAF7F2;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-left: 4px solid #D4A574;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            font-size: 18px;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #0F1B3C;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 60px;
+            background: #0F1B3C;
+            color: white;
+        }
+
+        .form-section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 42px;
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 40px;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #0F1B3C;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 42px;
+            color: #0F1B3C;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #2C2C2C;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Annotations */
+        .annotation {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        /* Mobile Note */
+        .mobile-note {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+
+        <!-- Color Palette Reference -->
+        <div class="color-palette">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #0F1B3C;"></div>
+                <div><strong>Savile Row Navy</strong><br>#0F1B3C</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #FAF7F2;"></div>
+                <div><strong>Bridal Ivory</strong><br>#FAF7F2</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #D4A574;"></div>
+                <div><strong>Champagne Gold</strong><br>#D4A574</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #2C2C2C;"></div>
+                <div><strong>Charcoal Grey</strong><br>#2C2C2C</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #F5E6E0;"></div>
+                <div><strong>Soft Blush</strong><br>#F5E6E0</div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: HERO -->
+        <section class="hero">
+            <span class="section-label">HERO - Above the Fold</span>
+            <h1>Where Savile Row Precision<br>Meets Bridal Perfection</h1>
+            <p class="subheadline">Luxury alterations from Fulham's only Savile Row-trained Master Tailor.<br>70+ years of bespoke excellence, now perfecting your most precious garments.</p>
+            <button class="cta-button">Book Your Private Consultation</button>
+            <div class="annotation">
+                📸 HERO IMAGE: Elegant bride in perfectly fitted dress, natural light, Kings Road location visible in background. Professional, sophisticated, aspirational.
+            </div>
+        </section>
+
+        <!-- SECTION 2: TRUST BAR -->
+        <section class="trust-bar">
+            <span class="section-label">TRUST BAR</span>
+            <p>⭐⭐⭐⭐⭐ Trusted by 500+ Fulham Brides | Featured in Vogue & Tatler | 70+ Years Heritage | Located at 136-144 New Kings Road, Fulham SW6</p>
+        </section>
+
+        <!-- SECTION 3: WHY BELLA BRIDES -->
+        <section class="section">
+            <span class="section-label">VALUE PROPOSITIONS</span>
+            <div class="section-header">
+                <h2>The Bella Brides Difference</h2>
+                <p>Where heritage craftsmanship meets modern luxury service</p>
+            </div>
+            <div class="three-columns">
+                <div class="column">
+                    <h3>🏆 Savile Row Heritage</h3>
+                    <p>70+ years of bespoke tailoring excellence from Grant & O'Sullivan. Master Tailor precision for your wedding dress.</p>
+                </div>
+                <div class="column">
+                    <h3>✨ Bespoke Techniques</h3>
+                    <p>28 measurements (vs. typical 5-7). Hand-finished seams. 8 specialists per garment. Museum-quality standards.</p>
+                </div>
+                <div class="column">
+                    <h3>📍 Fulham Excellence</h3>
+                    <p>Prestigious Kings Road location. Private fittings. White-glove service. Complete wedding party expertise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PACKAGES -->
+        <section class="packages">
+            <span class="section-label">PRICING PACKAGES</span>
+
+            <div class="package-card">
+                <h3>Bride Perfection</h3>
+                <div class="price">£1,500</div>
+                <ul>
+                    <li>✓ Up to 4 fittings</li>
+                    <li>✓ All standard alterations</li>
+                    <li>✓ Hand-finished details</li>
+                    <li>✓ Rush service included</li>
+                    <li>✓ 30-day fit guarantee</li>
+                </ul>
+                <button class="cta-button">Select Package</button>
+            </div>
+
+            <div class="package-card featured">
+                <h3>Heritage Restoration</h3>
+                <div class="price">£2,500</div>
+                <ul>
+                    <li>✓ Up to 6 fittings</li>
+                    <li>✓ Museum-quality care</li>
+                    <li>✓ Vintage restoration</li>
+                    <li>✓ Pattern recreation</li>
+                    <li>✓ 6-month fit guarantee</li>
+                </ul>
+                <button class="cta-button">Most Popular</button>
+            </div>
+
+            <div class="package-card">
+                <h3>White Glove Experience</h3>
+                <div class="price">£3,500</div>
+                <ul>
+                    <li>✓ Unlimited fittings</li>
+                    <li>✓ Home/venue fittings</li>
+                    <li>✓ Dedicated Master Tailor</li>
+                    <li>✓ Wedding day support</li>
+                    <li>✓ Lifetime adjustments</li>
+                </ul>
+                <button class="cta-button">Most Exclusive</button>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PROCESS -->
+        <section class="process">
+            <span class="section-label">THE PROCESS</span>
+
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Private Consultation</h4>
+                <p>60-minute evaluation with Master Tailor. £95 (fully credited)</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>First Fitting</h4>
+                <p>28 precision measurements. Timeline confirmation. White-glove pickup available.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Expert Alterations</h4>
+                <p>Hand-finished craftsmanship. 8 specialists. Progress photos provided.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Final Perfection</h4>
+                <p>Final fitting. Complimentary steaming. Satisfaction guaranteed.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: GALLERY -->
+        <section class="section">
+            <span class="section-label">PORTFOLIO GALLERY</span>
+            <div class="section-header">
+                <h2>Transformations That Tell Stories</h2>
+                <p>Before & after examples of our Savile Row precision</p>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item">Before/After #1<br>Wedding Dress</div>
+                <div class="gallery-item">Before/After #2<br>Vintage Gown</div>
+                <div class="gallery-item">Before/After #3<br>Designer Dress</div>
+                <div class="gallery-item">Before/After #4<br>Evening Wear</div>
+                <div class="gallery-item">Before/After #5<br>Restoration</div>
+                <div class="gallery-item">Before/After #6<br>Alteration</div>
+                <div class="gallery-item">Before/After #7<br>Custom Work</div>
+                <div class="gallery-item">Before/After #8<br>Bridal Party</div>
+            </div>
+            <div class="annotation">
+                📸 GALLERY IMAGES: High-resolution before/after pairs. Each with caption explaining complexity. Professional photography, consistent lighting, zoom functionality.
+            </div>
+        </section>
+
+        <!-- SECTION 7: TESTIMONIALS -->
+        <section class="testimonials">
+            <span class="section-label">SOCIAL PROOF</span>
+            <div class="section-header">
+                <h2>Trusted by Fulham's Most Discerning Brides</h2>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>"Bella Brides rescued my grandmother's 1950s wedding gown - the restoration was breathtaking. Worth every penny."</blockquote>
+                <div class="author">- Sarah M., Kensington ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>"The attention to detail on my Valentino alterations was impeccable. They understood exactly what the garment needed."</blockquote>
+                <div class="author">- Charlotte R., Chelsea ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>"White glove service in every sense. They came to my home for fittings and the final result was perfection."</blockquote>
+                <div class="author">- Emma L., Fulham ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div style="text-align: center; font-weight: 600; color: #0F1B3C; font-size: 18px;">
+                4.9/5 stars from 200+ verified clients
+            </div>
+        </section>
+
+        <!-- SECTION 8: FAQ -->
+        <section class="section">
+            <span class="section-label">FAQ</span>
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 20px; padding: 20px; background: #FAF7F2; border-radius: 4px;">
+                    <summary style="font-weight: 600; cursor: pointer; color: #0F1B3C;">Why do you charge for consultations?</summary>
+                    <p style="margin-top: 15px; color: #2C2C2C;">Our £95 consultation includes a comprehensive 60-minute evaluation with written recommendations and priority booking. This investment is fully credited toward your service.</p>
+                </details>
+
+                <details style="margin-bottom: 20px; padding: 20px; background: #FAF7F2; border-radius: 4px;">
+                    <summary style="font-weight: 600; cursor: pointer; color: #0F1B3C;">How far in advance should I book?</summary>
+                    <p style="margin-top: 15px; color: #2C2C2C;">We recommend 8-12 weeks before your wedding, though we offer rush services for tighter timelines.</p>
+                </details>
+
+                <details style="margin-bottom: 20px; padding: 20px; background: #FAF7F2; border-radius: 4px;">
+                    <summary style="font-weight: 600; cursor: pointer; color: #0F1B3C;">Do you work with all designer brands?</summary>
+                    <p style="margin-top: 15px; color: #2C2C2C;">Yes, we have extensive experience with Chanel, Hermès, Valentino, Vera Wang, and all luxury designers.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- SECTION 9: FINAL CTA / FORM -->
+        <section class="form-section">
+            <span class="section-label">CONVERSION FORM</span>
+            <h2>Begin Your Journey to Perfection</h2>
+
+            <div class="booking-form">
+                <div class="form-group">
+                    <label>Service Interest</label>
+                    <select>
+                        <option>Wedding Dress Alterations</option>
+                        <option>Designer Garment Alterations</option>
+                        <option>Vintage/Heirloom Restoration</option>
+                        <option>Formal/Evening Wear</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Timeline</label>
+                    <select>
+                        <option>More than 2 months</option>
+                        <option>1-2 months</option>
+                        <option>2-4 weeks</option>
+                        <option>Under 2 weeks (rush)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" placeholder="+44">
+                </div>
+
+                <div class="form-group">
+                    <label>Postcode *</label>
+                    <input type="text" placeholder="SW6 4LZ">
+                </div>
+
+                <div class="form-group">
+                    <label>Tell us about your garment</label>
+                    <textarea rows="4" placeholder="Describe your dress and what you'd like to achieve..."></textarea>
+                </div>
+
+                <button class="cta-button" style="width: 100%;">Reserve My Private Consultation</button>
+
+                <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                    Your information is kept strictly confidential. £95 consultation fee fully credited toward services booked.
+                </p>
+            </div>
+        </section>
+
+        <!-- MOBILE NOTE -->
+        <div class="mobile-note" style="margin: 0; border-radius: 0;">
+            <strong>📱 MOBILE RESPONSIVE DESIGN:</strong> All sections will stack vertically on mobile. Touch-friendly buttons (min 44px). Forms optimized for mobile input. Fast load times (&lt;3 seconds).
+        </div>
+
+    </div>
+</body>
+</html>

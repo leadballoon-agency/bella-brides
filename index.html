@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxury wedding dress alterations from Fulham's only Savile Row-trained Master Tailor. 70+ years of bespoke excellence. Based at 136-144 New Kings Road, Fulham SW6.">
+    <title>Bella Brides Alterations | Savile Row Expertise in Fulham</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Est. 1950 • Savile Row Heritage</div>
+            <h1 class="hero-title">Where Savile Row Precision<br>Meets Bridal Perfection</h1>
+            <p class="hero-subtitle">Luxury alterations from Fulham's only Savile Row-trained Master Tailor.<br>70+ years of bespoke excellence, now perfecting your most precious garments.</p>
+            <button class="cta-button primary" onclick="scrollToForm()">Book Your Private Consultation</button>
+            <div class="hero-trust">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span>4.9/5 from 200+ verified clients</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <strong>500+</strong>
+                    <span>Fulham Brides</span>
+                </div>
+                <div class="trust-item">
+                    <strong>70+</strong>
+                    <span>Years Heritage</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Featured In</strong>
+                    <span>Vogue & Tatler</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Kings Road</strong>
+                    <span>Fulham SW6</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="section-white" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Bella Brides Difference</h2>
+                <p>Where heritage craftsmanship meets modern luxury service</p>
+            </div>
+            <div class="three-columns">
+                <div class="value-card">
+                    <div class="value-icon">🏆</div>
+                    <h3>Savile Row Heritage</h3>
+                    <p>70+ years of bespoke tailoring excellence from Grant & O'Sullivan. Master Tailor precision for your wedding dress.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Bespoke Techniques</h3>
+                    <p>28 measurements (vs. typical 5-7). Hand-finished seams. 8 specialists per garment. Museum-quality standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📍</div>
+                    <h3>Fulham Excellence</h3>
+                    <p>Prestigious Kings Road location. Private fittings. White-glove service. Complete wedding party expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="section-ivory" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Packages Designed for You</h2>
+                <p>Transparent pricing with Savile Row standards</p>
+            </div>
+            <div class="packages-grid">
+
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Bride Perfection</h3>
+                        <div class="package-price">£1,500</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Up to 4 professional fittings</li>
+                        <li>✓ All standard alterations</li>
+                        <li>✓ Hand-finished details</li>
+                        <li>✓ Rush service included</li>
+                        <li>✓ 30-day fit guarantee</li>
+                        <li>✓ Climate-controlled storage</li>
+                        <li>✓ Master Tailor oversight</li>
+                    </ul>
+                    <button class="cta-button secondary" onclick="selectPackage('Bride Perfection')">Select Package</button>
+                </div>
+
+                <!-- Package 2 - Featured -->
+                <div class="package-card featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Heritage Restoration</h3>
+                        <div class="package-price">£2,500</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Up to 6 specialist fittings</li>
+                        <li>✓ Museum-quality care</li>
+                        <li>✓ Vintage restoration</li>
+                        <li>✓ Pattern recreation</li>
+                        <li>✓ 6-month fit guarantee</li>
+                        <li>✓ Archival documentation</li>
+                        <li>✓ Rare fabric sourcing</li>
+                    </ul>
+                    <button class="cta-button primary" onclick="selectPackage('Heritage Restoration')">Select Package</button>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>White Glove Experience</h3>
+                        <div class="package-price">£3,500</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Unlimited fittings</li>
+                        <li>✓ Home/venue fittings</li>
+                        <li>✓ Dedicated Master Tailor</li>
+                        <li>✓ Wedding day support (2hrs)</li>
+                        <li>✓ Lifetime adjustments</li>
+                        <li>✓ Priority scheduling</li>
+                        <li>✓ Complimentary bridesmaid dress</li>
+                    </ul>
+                    <button class="cta-button secondary" onclick="selectPackage('White Glove Experience')">Select Package</button>
+                </div>
+
+            </div>
+            <div class="package-note">
+                <strong>Private Consultation: £95</strong> (fully credited toward your service booking)<br>
+                60-minute evaluation with Master Tailor including 28 precision measurements.
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section-white" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Journey to Perfection</h2>
+                <p>A meticulous process refined over seven decades</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h4>Private Consultation</h4>
+                    <p>60-minute comprehensive evaluation. Expert recommendations in writing. £95 fully credited.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h4>First Fitting</h4>
+                    <p>28 precision measurements and pinning. Timeline confirmation. White-glove pickup available.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h4>Expert Alterations</h4>
+                    <p>Hand-finished craftsmanship. 8 specialists per garment. Progress photos for peace of mind.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h4>Final Perfection</h4>
+                    <p>Final fitting & guarantee. Complimentary steaming. Lifetime care guidance provided.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section-dark" id="gallery">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Transformations That Tell Stories</h2>
+                <p>Real alterations, real perfection</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0000.jpg" alt="Wedding dress alteration" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0001.jpg" alt="Bridal gown fitting" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0002.jpg" alt="Designer dress alteration" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0003.jpg" alt="Wedding dress transformation" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0004.jpg" alt="Bridal alterations" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0005.jpg" alt="Evening wear alteration" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0006.jpg" alt="Vintage dress restoration" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0007.jpg" alt="Bridal gown perfection" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="Public/Images/IMG-20250925-WA0008.jpg" alt="Designer alterations" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-ivory" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Fulham's Most Discerning Brides</h2>
+                <p>Real clients, real transformations</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Bella Brides rescued my grandmother's 1950s wedding gown - the restoration was breathtaking. Worth every penny."</blockquote>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong>
+                        <span>Kensington</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"The attention to detail on my Valentino alterations was impeccable. They understood exactly what the garment needed."</blockquote>
+                    <div class="testimonial-author">
+                        <strong>Charlotte R.</strong>
+                        <span>Chelsea</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"White glove service in every sense. They came to my home for fittings and the final result was perfection."</blockquote>
+                    <div class="testimonial-author">
+                        <strong>Emma L.</strong>
+                        <span>Fulham</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <strong style="font-size: 20px; color: #0F1B3C;">4.9/5 stars from 200+ verified clients</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>Why do you charge for consultations?</summary>
+                    <p>Our £95 consultation includes a comprehensive 60-minute evaluation with written recommendations and priority booking - far more detailed than typical free assessments. This investment is fully credited toward your service, making it risk-free for serious clients while maintaining our exclusive service standards.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How far in advance should I book for wedding alterations?</summary>
+                    <p>We recommend 8-12 weeks before your wedding for optimal scheduling. However, we offer rush services for tighter timelines and same-day emergency service for White Glove Experience clients.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do you work with all designer brands?</summary>
+                    <p>Yes, we have extensive experience with all luxury designers including Chanel, Hermès, Valentino, Vera Wang, and more. We understand brand-specific construction techniques and can maintain warranties where possible.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What makes your alterations different from others?</summary>
+                    <p>We apply the same bespoke techniques used in creating Savile Row suits - hand-finished seams, pattern matching, structural integrity, and up to 28 measurements for perfect fit (most alterations use only 5-7 measurements).</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can you restore vintage or antique garments?</summary>
+                    <p>Absolutely. Our Heritage Restoration Package uses museum-quality techniques for precious heirlooms, including rare fabric sourcing from our library of 7,000+ fabrics and archival documentation.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do you offer men's alterations too?</summary>
+                    <p>Yes! Grant & O'Sullivan is primarily a men's bespoke tailor with Savile Row expertise. We offer complete alteration services for wedding parties - from his suits to her gown.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="section-form" id="booking">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Begin Your Journey to Perfection</h2>
+                <p>Limited consultation slots available - book your private appointment</p>
+            </div>
+            <div class="form-container">
+                <form id="bookingForm" class="booking-form">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceInterest">Service Interest *</label>
+                            <select id="serviceInterest" name="serviceInterest" required>
+                                <option value="">Select a service...</option>
+                                <option value="wedding">Wedding Dress Alterations</option>
+                                <option value="designer">Designer Garment Alterations</option>
+                                <option value="vintage">Vintage/Heirloom Restoration</option>
+                                <option value="formal">Formal/Evening Wear</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Timeline *</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">When do you need this?</option>
+                                <option value="2months+">More than 2 months</option>
+                                <option value="1-2months">1-2 months</option>
+                                <option value="2-4weeks">2-4 weeks</option>
+                                <option value="rush">Under 2 weeks (rush)</option>
+                                <option value="emergency">Emergency (under 1 week)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+44" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postcode">Postcode *</label>
+                            <input type="text" id="postcode" name="postcode" placeholder="SW6 4LZ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Tell us about your garment</label>
+                        <textarea id="details" name="details" rows="4" placeholder="Describe your dress and what you'd like to achieve..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="package">Preferred Package (Optional)</label>
+                        <select id="package" name="package">
+                            <option value="">I'm not sure yet</option>
+                            <option value="bride-perfection">Bride Perfection - £1,500</option>
+                            <option value="heritage-restoration">Heritage Restoration - £2,500</option>
+                            <option value="white-glove">White Glove Experience - £3,500</option>
+                        </select>
+                    </div>
+
+                    <div class="form-consent">
+                        <label>
+                            <input type="checkbox" name="consent" required>
+                            I understand the £95 consultation fee is fully credited toward services booked. *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="cta-button primary large">Reserve My Private Consultation</button>
+
+                    <p class="form-disclaimer">
+                        Your information is kept strictly confidential. Consultation slots are limited to ensure personalized attention.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Bella Brides Alterations</h4>
+                    <p>Where Savile Row Precision<br>Meets Bridal Perfection</p>
+                    <p style="margin-top: 15px; font-size: 14px; color: #D4A574;">
+                        Backed by Grant & O'Sullivan's<br>70+ years of Savile Row excellence
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <p>136-144 New Kings Road<br>Fulham, London<br>SW6 4LZ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: alterations@bellabrides.co.uk<br>Phone: [To be confirmed]<br>Hours: Tue-Fri 10am-7pm<br>Sat 10am-5pm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p>Wedding Dress Alterations<br>Designer Garment Care<br>Vintage Restoration<br>Formal & Ceremonial</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bella Brides Alterations. All rights reserved.</p>
+                <p>Part of the Grant & O'Sullivan family of businesses</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
