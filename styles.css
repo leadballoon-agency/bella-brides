@@ -29,6 +29,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -36,6 +37,9 @@ body {
     color: var(--soft-charcoal);
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 .container {
@@ -1075,6 +1079,7 @@ body {
     background: #0a1226;
     color: rgba(250, 247, 242, 0.8);
     padding: 60px 0 30px;
+    margin: 0;
 }
 
 .footer-content {
