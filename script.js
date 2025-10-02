@@ -10,33 +10,7 @@ function scrollToForm() {
     });
 }
 
-// Select package and scroll to form
-function selectPackage(packageName) {
-    // Set the package in the form
-    const packageSelect = document.getElementById('package');
-
-    if (packageName === 'Bride Perfection') {
-        packageSelect.value = 'bride-perfection';
-    } else if (packageName === 'Heritage Restoration') {
-        packageSelect.value = 'heritage-restoration';
-    } else if (packageName === 'White Glove Experience') {
-        packageSelect.value = 'white-glove';
-    }
-
-    // Scroll to form
-    scrollToForm();
-
-    // Highlight the package select briefly
-    setTimeout(() => {
-        packageSelect.style.borderColor = '#D4A574';
-        packageSelect.style.boxShadow = '0 0 0 3px rgba(212, 165, 116, 0.2)';
-
-        setTimeout(() => {
-            packageSelect.style.borderColor = '';
-            packageSelect.style.boxShadow = '';
-        }, 2000);
-    }, 500);
-}
+// Removed selectPackage function - no longer needed for wedding alterations focus
 
 // Form submission handler
 document.addEventListener('DOMContentLoaded', function() {
@@ -97,8 +71,8 @@ function showSuccessMessage() {
     successDiv.innerHTML = `
         <h3 style="margin-bottom: 15px; font-size: 24px;">✓ Consultation Request Received!</h3>
         <p style="font-size: 16px; line-height: 1.6;">
-            Thank you for choosing Bella Brides Alterations.<br>
-            We'll contact you within 2 hours to schedule your private consultation.
+            Thank you for choosing Luxury Alterations.<br>
+            We'll contact you within 24 hours to schedule your free consultation.
         </p>
     `;
 

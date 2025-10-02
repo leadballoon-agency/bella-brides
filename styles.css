@@ -10,13 +10,13 @@
 }
 
 :root {
-    /* Brand Colors */
-    --savile-navy: #0F1B3C;
-    --bridal-ivory: #FAF7F2;
-    --champagne-gold: #D4A574;
-    --charcoal: #2C2C2C;
-    --soft-blush: #F5E6E0;
-    --heritage-green: #1B4D3E;
+    /* Brand Colors - Soft Romantic Wedding Theme */
+    --dusty-rose: #D4A5A5;
+    --sage-green: #A8B5A0;
+    --warm-cream: #FAF6F0;
+    --soft-charcoal: #4A4A4A;
+    --pearl-white: #FEFDFB;
+    --light-mauve: #E8D5DB;
 
     /* Typography */
     --font-serif: 'Playfair Display', Georgia, serif;
@@ -33,7 +33,7 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -52,7 +52,7 @@ body {
     height: 100vh;
     min-height: 700px;
     background:
-        linear-gradient(135deg, rgba(15, 27, 60, 0.85) 0%, rgba(26, 45, 90, 0.85) 100%),
+        linear-gradient(135deg, rgba(212, 165, 165, 0.75) 0%, rgba(168, 181, 160, 0.75) 100%),
         url('Public/Images/IMG-20250925-WA0001.jpg');
     background-size: cover;
     background-position: center;
@@ -74,8 +74,8 @@ body {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(232, 213, 219, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 165, 165, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -85,7 +85,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(15, 27, 60, 0.4) 0%, rgba(15, 27, 60, 0.6) 100%);
+    background: linear-gradient(180deg, rgba(212, 165, 165, 0.3) 0%, rgba(168, 181, 160, 0.4) 100%);
     backdrop-filter: blur(2px);
 }
 
@@ -99,24 +99,24 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(212, 165, 116, 0.2);
-    color: var(--champagne-gold);
+    background: rgba(232, 213, 219, 0.3);
+    color: var(--light-mauve);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 30px;
-    border: 1px solid var(--champagne-gold);
+    border: 1px solid var(--light-mauve);
 }
 
 .hero-title {
     font-family: var(--font-serif);
     font-size: 64px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: 25px;
-    color: var(--bridal-ivory);
+    color: var(--pearl-white);
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -131,7 +131,7 @@ body {
 .hero-trust {
     margin-top: 30px;
     font-size: 14px;
-    color: var(--champagne-gold);
+    color: var(--light-mauve);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,8 +149,8 @@ body {
 .scroll-arrow {
     width: 30px;
     height: 30px;
-    border-left: 2px solid var(--champagne-gold);
-    border-bottom: 2px solid var(--champagne-gold);
+    border-left: 2px solid var(--light-mauve);
+    border-bottom: 2px solid var(--light-mauve);
     transform: rotate(-45deg);
 }
 
@@ -196,24 +196,24 @@ body {
 }
 
 .cta-button.primary {
-    background: var(--champagne-gold);
-    color: var(--savile-navy);
+    background: var(--dusty-rose);
+    color: white;
 }
 
 .cta-button.primary:hover {
-    background: #c49a64;
+    background: #C19595;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 10px 25px rgba(212, 165, 165, 0.3);
 }
 
 .cta-button.secondary {
     background: transparent;
-    color: var(--savile-navy);
-    border: 2px solid var(--savile-navy);
+    color: var(--dusty-rose);
+    border: 2px solid var(--dusty-rose);
 }
 
 .cta-button.secondary:hover {
-    background: var(--savile-navy);
+    background: var(--dusty-rose);
     color: white;
 }
 
@@ -228,9 +228,9 @@ body {
    ==================================== */
 
 .trust-bar {
-    background: var(--bridal-ivory);
+    background: var(--warm-cream);
     padding: 30px 0;
-    border-bottom: 2px solid var(--champagne-gold);
+    border-bottom: 2px solid var(--light-mauve);
 }
 
 .trust-items {
@@ -250,13 +250,13 @@ body {
 
 .trust-item strong {
     font-size: 24px;
-    color: var(--savile-navy);
-    font-weight: 700;
+    color: var(--dusty-rose);
+    font-weight: 600;
 }
 
 .trust-item span {
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
 }
 
 /* ====================================
@@ -269,12 +269,12 @@ body {
 }
 
 .section-ivory {
-    background: var(--bridal-ivory);
+    background: var(--warm-cream);
     padding: var(--section-padding);
 }
 
 .section-dark {
-    background: var(--savile-navy);
+    background: var(--sage-green);
     padding: var(--section-padding);
     color: white;
 }
@@ -287,20 +287,20 @@ body {
 .section-header h2 {
     font-family: var(--font-serif);
     font-size: 48px;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     margin-bottom: 15px;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .section-header p {
     font-size: 18px;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     max-width: 700px;
     margin: 0 auto;
 }
 
 .section-header.light h2 {
-    color: var(--bridal-ivory);
+    color: var(--pearl-white);
 }
 
 .section-header.light p {
@@ -329,7 +329,7 @@ body {
 .value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--champagne-gold);
+    border-color: var(--dusty-rose);
 }
 
 .value-icon {
@@ -340,14 +340,14 @@ body {
 .value-card h3 {
     font-family: var(--font-serif);
     font-size: 24px;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     margin-bottom: 15px;
 }
 
 .value-card p {
     font-size: 16px;
     line-height: 1.7;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
 }
 
 /* ====================================
@@ -391,8 +391,8 @@ body {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--savile-navy);
-    color: var(--champagne-gold);
+    background: var(--dusty-rose);
+    color: var(--dusty-rose);
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 12px;
@@ -404,14 +404,14 @@ body {
 .package-header h3 {
     font-family: var(--font-serif);
     font-size: 28px;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     margin-bottom: 10px;
 }
 
 .package-price {
     font-size: 56px;
     font-weight: 700;
-    color: var(--champagne-gold);
+    color: var(--dusty-rose);
     margin-bottom: 30px;
     font-family: var(--font-serif);
 }
@@ -425,7 +425,7 @@ body {
 .package-features li {
     padding: 12px 0;
     border-bottom: 1px solid #eee;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     font-size: 15px;
 }
 
@@ -460,8 +460,8 @@ body {
 .process-number {
     width: 80px;
     height: 80px;
-    background: var(--savile-navy);
-    color: var(--champagne-gold);
+    background: var(--dusty-rose);
+    color: var(--dusty-rose);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -475,14 +475,14 @@ body {
 .process-step h4 {
     font-family: var(--font-serif);
     font-size: 22px;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     margin-bottom: 15px;
 }
 
 .process-step p {
     font-size: 15px;
     line-height: 1.7;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
 }
 
 /* ====================================
@@ -523,7 +523,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -554,7 +554,7 @@ body {
 }
 
 .testimonial-stars {
-    color: var(--champagne-gold);
+    color: var(--dusty-rose);
     font-size: 18px;
     margin-bottom: 15px;
 }
@@ -563,7 +563,7 @@ body {
     font-style: italic;
     font-size: 17px;
     line-height: 1.8;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     margin-bottom: 20px;
 }
 
@@ -574,7 +574,7 @@ body {
 }
 
 .testimonial-author strong {
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     font-weight: 600;
 }
 
@@ -604,7 +604,7 @@ body {
     padding: 25px;
     font-weight: 600;
     font-size: 17px;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     cursor: pointer;
     user-select: none;
     transition: background 0.3s ease;
@@ -616,7 +616,7 @@ body {
 
 .faq-item p {
     padding: 0 25px 25px 25px;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     line-height: 1.8;
     font-size: 15px;
 }
@@ -626,7 +626,7 @@ body {
    ==================================== */
 
 .section-form {
-    background: var(--savile-navy);
+    background: var(--dusty-rose);
     padding: var(--section-padding);
     color: white;
 }
@@ -656,7 +656,7 @@ body {
 
 .form-group label {
     display: block;
-    color: var(--savile-navy);
+    color: var(--dusty-rose);
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 14px;
@@ -678,7 +678,7 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--champagne-gold);
+    border-color: var(--dusty-rose);
 }
 
 .form-group textarea {
@@ -694,7 +694,7 @@ body {
     align-items: flex-start;
     gap: 10px;
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--soft-charcoal);
     cursor: pointer;
 }
 
@@ -730,7 +730,7 @@ body {
 
 .footer-section h4 {
     font-family: var(--font-serif);
-    color: var(--champagne-gold);
+    color: var(--dusty-rose);
     margin-bottom: 20px;
     font-size: 20px;
 }
@@ -743,7 +743,7 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    border-top: 1px solid rgba(232, 213, 219, 0.2);
     font-size: 13px;
 }
 
