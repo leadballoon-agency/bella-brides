@@ -1162,7 +1162,20 @@ body {
     }
 
     .booking-form {
-        padding: 30px;
+        padding: 30px 20px;
+    }
+
+    .form-container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-form .container {
+        padding: 0 10px;
     }
 
     .process-grid {
@@ -1193,5 +1206,19 @@ body {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .booking-form {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .section-form .container {
+        padding: 0 5px;
+    }
+
+    .calendar-embed-container {
+        margin: 10px -15px;
+        width: calc(100% + 30px);
     }
 }
