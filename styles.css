@@ -734,6 +734,37 @@ body {
     line-height: 1.6;
 }
 
+/* Centered Input for Step 1 */
+.centered-input {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.centered-input input {
+    text-align: center;
+    font-size: 18px;
+    padding: 18px 20px;
+}
+
+.centered-input label {
+    text-align: center;
+    display: block;
+    font-size: 16px;
+}
+
+/* Calendar Embed Container */
+.calendar-embed-container {
+    margin: 20px 0;
+    min-height: 400px;
+}
+
+.calendar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
 /* ====================================
    MULTI-STEP FORM
    ==================================== */

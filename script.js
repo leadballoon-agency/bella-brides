@@ -79,6 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         currentStepElement.querySelector('.alteration-checkboxes').parentNode.appendChild(errorMsg);
                     }
                 }
+            } else if (input.type === 'radio') {
+                // For radio groups, check if at least one is checked
+                const radioGroup = currentStepElement.querySelectorAll(`input[type="radio"][name="${input.name}"]`);
+                const anyChecked = Array.from(radioGroup).some(rb => rb.checked);
+                if (!anyChecked && stepNumber === 3) {
+                    isValid = false;
+                }
             } else if (!input.value.trim()) {
                 isValid = false;
                 input.style.borderColor = '#ff4444';
@@ -94,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.step-next').forEach(button => {
         button.addEventListener('click', function() {
             if (validateStep(currentStep)) {
-                if (currentStep < 2) {
+                if (currentStep < 4) {
                     currentStep++;
                     showStep(currentStep);
                 }
