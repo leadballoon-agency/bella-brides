@@ -333,28 +333,28 @@
             </div>
             <div class="faq-container">
                 <details class="faq-item">
-                    <summary>Why do you charge for consultations?</summary>
-                    <p>Our £95 consultation includes a comprehensive 60-minute evaluation with written recommendations and priority booking - far more detailed than typical free assessments. This investment is fully credited toward your service, making it risk-free for serious clients while maintaining our exclusive service standards.</p>
+                    <summary>Is the consultation really free?</summary>
+                    <p>Yes, absolutely! Your initial consultation is completely free with no obligation. We'll examine your dress, discuss what you'd like to achieve, and provide a detailed quote for the work needed. This typically takes 30-45 minutes.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>How far in advance should I book for wedding alterations?</summary>
-                    <p>We recommend 8-12 weeks before your wedding for optimal scheduling. However, we offer rush services for tighter timelines and same-day emergency service for White Glove Experience clients.</p>
+                    <summary>How far in advance should I book for wedding dress alterations?</summary>
+                    <p>We recommend booking 8-12 weeks before your wedding for the best experience. This allows time for multiple fittings and any adjustments needed. However, we can accommodate rush requests depending on our schedule - just let us know your timeline.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Do you work with all designer brands?</summary>
-                    <p>Yes, we have extensive experience with all luxury designers including Chanel, Hermès, Valentino, Vera Wang, and more. We understand brand-specific construction techniques and can maintain warranties where possible.</p>
+                    <summary>Do you work with all wedding dress designers?</summary>
+                    <p>Yes! We have decades of experience working with all major bridal designers including Vera Wang, Pronovias, Maggie Sottero, and boutique designers. We also specialize in vintage and heirloom wedding gowns that require extra care.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>What makes your alterations different from others?</summary>
-                    <p>We apply the same bespoke techniques used in creating Savile Row suits - hand-finished seams, pattern matching, structural integrity, and up to 28 measurements for perfect fit (most alterations use only 5-7 measurements).</p>
+                    <summary>What makes your wedding dress alterations special?</summary>
+                    <p>We specialize exclusively in bridal wear, so we understand the unique construction of wedding dresses. Every alteration is hand-finished with meticulous attention to detail, ensuring your dress fits perfectly and you feel confident on your special day.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Can you restore vintage or antique garments?</summary>
-                    <p>Absolutely. Our Heritage Restoration Package uses museum-quality techniques for precious heirlooms, including rare fabric sourcing from our library of 7,000+ fabrics and archival documentation.</p>
+                    <summary>Can you restore my mother's or grandmother's wedding dress?</summary>
+                    <p>Absolutely! Vintage and heirloom wedding dress restoration is one of our specialties. We treat these precious garments with the utmost care, preserving original details while ensuring a perfect modern fit. We can also carefully clean and restore delicate vintage fabrics and lace.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Do you offer men's alterations too?</summary>
-                    <p>Yes! Grant & O'Sullivan is primarily a men's bespoke tailor with Savile Row expertise. We offer complete alteration services for wedding parties - from his suits to her gown.</p>
+                    <summary>How much will my alterations cost?</summary>
+                    <p>Every wedding dress is unique, so we provide personalized quotes after examining your dress at the free consultation. Costs depend on the complexity of alterations needed, fabric type, and embellishments. We'll give you a clear, detailed quote with no hidden fees before any work begins.</p>
                 </details>
             </div>
         </div>
@@ -365,58 +365,156 @@
         <div class="container">
             <div class="section-header light">
                 <h2>Book Your Free Consultation</h2>
-                <p>Get a personalized quote for your wedding dress alterations</p>
+                <p>Just 2 quick steps to get your personalized quote</p>
             </div>
             <div class="form-container">
-                <form id="bookingForm" class="booking-form">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <div class="progress-step active" data-step="1">
+                        <div class="progress-circle">1</div>
+                        <div class="progress-label">About You</div>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+44" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="weddingDate">Wedding Date *</label>
-                            <input type="date" id="weddingDate" name="weddingDate" required>
-                        </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-circle">2</div>
+                        <div class="progress-label">Your Dress</div>
                     </div>
+                </div>
 
-                    <div class="form-row">
+                <form id="bookingForm" class="booking-form multi-step-form">
+
+                    <!-- Step 1: About You -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-title">Let's get to know you 👋</h3>
                         <div class="form-group">
-                            <label for="dressDesigner">Dress Designer/Brand</label>
-                            <input type="text" id="dressDesigner" name="dressDesigner" placeholder="e.g., Pronovias, Vera Wang, vintage">
+                            <label for="fullName">Your Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="What should we call you?" required>
                         </div>
-
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+44" required>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label for="postcode">Postcode</label>
+                            <label for="postcode">Postcode (optional)</label>
                             <input type="text" id="postcode" name="postcode" placeholder="SW6 4LZ">
                         </div>
+                        <button type="button" class="cta-button primary large step-next">Next Step →</button>
                     </div>
 
-                    <div class="form-group">
-                        <label for="alterationsNeeded">What alterations do you need? *</label>
-                        <textarea id="alterationsNeeded" name="alterationsNeeded" rows="4" placeholder="e.g., hem adjustment, taking in at waist, bustle, strap modifications..." required></textarea>
-                    </div>
+                    <!-- Step 2: About Your Dress -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-title">Tell us about your dress 👰</h3>
 
-                    <div class="form-group">
-                        <label for="additionalInfo">Additional Information</label>
-                        <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any other details about your dress or special requests..."></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label>When do you need your dress ready by? *</label>
+                            <div class="timeline-buttons">
+                                <label class="timeline-card">
+                                    <input type="radio" name="timeline" value="urgent" required>
+                                    <span class="timeline-content">
+                                        <span class="timeline-period">< 2 weeks</span>
+                                        <span class="timeline-label">Rush!</span>
+                                    </span>
+                                </label>
+                                <label class="timeline-card">
+                                    <input type="radio" name="timeline" value="tight" required>
+                                    <span class="timeline-content">
+                                        <span class="timeline-period">2-4 weeks</span>
+                                        <span class="timeline-label">Tight</span>
+                                    </span>
+                                </label>
+                                <label class="timeline-card">
+                                    <input type="radio" name="timeline" value="good" required>
+                                    <span class="timeline-content">
+                                        <span class="timeline-period">1-2 months</span>
+                                        <span class="timeline-label">Good</span>
+                                    </span>
+                                </label>
+                                <label class="timeline-card">
+                                    <input type="radio" name="timeline" value="ideal" required>
+                                    <span class="timeline-content">
+                                        <span class="timeline-period">2-3 months</span>
+                                        <span class="timeline-label">Ideal ✨</span>
+                                    </span>
+                                </label>
+                                <label class="timeline-card">
+                                    <input type="radio" name="timeline" value="plenty" required>
+                                    <span class="timeline-content">
+                                        <span class="timeline-period">3+ months</span>
+                                        <span class="timeline-label">Plenty</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
 
-                    <button type="submit" class="cta-button primary large">Request Free Consultation</button>
+                        <div class="form-group">
+                            <label for="dressDesigner">Dress Designer/Brand (optional)</label>
+                            <input type="text" id="dressDesigner" name="dressDesigner" placeholder="e.g., Pronovias, Vera Wang, vintage, high street">
+                        </div>
+
+                        <div class="form-group">
+                            <label>What alterations do you need? *</label>
+                            <div class="alteration-checkboxes">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="hem">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">✂️</span>
+                                        <span class="checkbox-text">Hem/Length</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="taking-in">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">📐</span>
+                                        <span class="checkbox-text">Taking In/Out</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="bustle">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">🎀</span>
+                                        <span class="checkbox-text">Bustle</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="straps">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">👗</span>
+                                        <span class="checkbox-text">Straps/Sleeves</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="neckline">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">💎</span>
+                                        <span class="checkbox-text">Neckline</span>
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="alterations" value="vintage">
+                                    <span class="checkbox-content">
+                                        <span class="checkbox-icon">🕰️</span>
+                                        <span class="checkbox-text">Vintage Restore</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additionalInfo">Additional details (optional)</label>
+                            <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any special requests or details about your dress..."></textarea>
+                        </div>
+
+                        <div class="step-buttons">
+                            <button type="button" class="cta-button secondary step-prev">← Back</button>
+                            <button type="submit" class="cta-button primary large">Request Free Consultation ✨</button>
+                        </div>
+                    </div>
 
                     <p class="form-disclaimer">
                         Your information is kept strictly confidential. We'll contact you within 24 hours to schedule your free consultation.

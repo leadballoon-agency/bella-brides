@@ -1,5 +1,5 @@
 // ====================================
-// BELLA BRIDES ALTERATIONS - JAVASCRIPT
+// LUXURY ALTERATIONS - JAVASCRIPT
 // ====================================
 
 // Smooth scroll to form
@@ -10,19 +10,138 @@ function scrollToForm() {
     });
 }
 
-// Removed selectPackage function - no longer needed for wedding alterations focus
-
-// Form submission handler
+// Multi-Step Form Logic
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
+    const formSteps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    let currentStep = 1;
 
+    // Make date input open on click anywhere
+    const dateInput = document.getElementById('weddingDate');
+    if (dateInput) {
+        dateInput.addEventListener('click', function() {
+            this.showPicker();
+        });
+    }
+
+    // Navigation functions
+    function showStep(stepNumber) {
+        // Hide all steps
+        formSteps.forEach(step => {
+            step.classList.remove('active');
+        });
+
+        // Show current step
+        const currentStepElement = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+        if (currentStepElement) {
+            currentStepElement.classList.add('active');
+        }
+
+        // Update progress indicator
+        progressSteps.forEach((step, index) => {
+            const stepNum = index + 1;
+            step.classList.remove('active', 'completed');
+
+            if (stepNum === stepNumber) {
+                step.classList.add('active');
+            } else if (stepNum < stepNumber) {
+                step.classList.add('completed');
+            }
+        });
+
+        // Scroll to form
+        document.getElementById('booking').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    function validateStep(stepNumber) {
+        const currentStepElement = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+        const requiredInputs = currentStepElement.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredInputs.forEach(input => {
+            if (input.type === 'checkbox') {
+                // For checkbox groups, check if at least one is checked
+                const checkboxGroup = currentStepElement.querySelectorAll('input[type="checkbox"][name="alterations"]');
+                const anyChecked = Array.from(checkboxGroup).some(cb => cb.checked);
+                if (!anyChecked && stepNumber === 2) {
+                    isValid = false;
+                    // Show error message
+                    let errorMsg = currentStepElement.querySelector('.error-message');
+                    if (!errorMsg) {
+                        errorMsg = document.createElement('div');
+                        errorMsg.className = 'error-message';
+                        errorMsg.style.cssText = 'color: #ff4444; margin-top: 10px; font-size: 14px;';
+                        errorMsg.textContent = 'Please select at least one alteration';
+                        currentStepElement.querySelector('.alteration-checkboxes').parentNode.appendChild(errorMsg);
+                    }
+                }
+            } else if (!input.value.trim()) {
+                isValid = false;
+                input.style.borderColor = '#ff4444';
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+
+        return isValid;
+    }
+
+    // Next button click
+    document.querySelectorAll('.step-next').forEach(button => {
+        button.addEventListener('click', function() {
+            if (validateStep(currentStep)) {
+                if (currentStep < 2) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+        });
+    });
+
+    // Previous button click
+    document.querySelectorAll('.step-prev').forEach(button => {
+        button.addEventListener('click', function() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // Form submission
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
             // Get form data
             const formData = new FormData(bookingForm);
-            const data = Object.fromEntries(formData);
+
+            // Get selected alterations
+            const alterations = [];
+            formData.getAll('alterations').forEach(alt => {
+                alterations.push(alt);
+            });
+
+            // Build data object
+            const data = {
+                weddingDate: formData.get('weddingDate'),
+                timeline: formData.get('timeline'),
+                dressDesigner: formData.get('dressDesigner'),
+                alterations: alterations,
+                additionalInfo: formData.get('additionalInfo'),
+                fullName: formData.get('fullName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                postcode: formData.get('postcode')
+            };
 
             // Log form data (in production, send to server)
             console.log('Form submitted:', data);
@@ -32,23 +151,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Reset form
             bookingForm.reset();
+            currentStep = 1;
+            showStep(1);
         });
     }
 
     // Form validation feedback
-    const inputs = document.querySelectorAll('input[required], select[required], textarea[required]');
+    const inputs = document.querySelectorAll('input, select, textarea');
 
     inputs.forEach(input => {
         input.addEventListener('blur', function() {
-            if (this.value.trim() === '') {
+            if (this.hasAttribute('required') && this.value.trim() === '') {
                 this.style.borderColor = '#ff4444';
-            } else {
-                this.style.borderColor = '#4CAF50';
             }
         });
 
         input.addEventListener('focus', function() {
             this.style.borderColor = '#D4A574';
+            // Remove error message if exists
+            const errorMsg = this.closest('.form-group')?.querySelector('.error-message');
+            if (errorMsg) {
+                errorMsg.remove();
+            }
+        });
+    });
+
+    // Clear error on checkbox selection
+    document.querySelectorAll('input[type="checkbox"][name="alterations"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const errorMsg = document.querySelector('.alteration-checkboxes').parentNode.querySelector('.error-message');
+            if (errorMsg) {
+                errorMsg.remove();
+            }
         });
     });
 });

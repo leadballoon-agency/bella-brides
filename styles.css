@@ -99,15 +99,16 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(232, 213, 219, 0.3);
-    color: var(--light-mauve);
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 30px;
-    border: 1px solid var(--light-mauve);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
@@ -198,12 +199,15 @@ body {
 .cta-button.primary {
     background: var(--dusty-rose);
     color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 3;
 }
 
 .cta-button.primary:hover {
     background: #C19595;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(212, 165, 165, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .cta-button.secondary {
@@ -674,6 +678,25 @@ body {
     transition: border-color 0.3s ease;
 }
 
+.form-group input[type="date"] {
+    cursor: pointer;
+    position: relative;
+    padding-right: 40px;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    position: absolute;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.form-group input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -709,6 +732,308 @@ body {
     color: #666;
     margin-top: 20px;
     line-height: 1.6;
+}
+
+/* ====================================
+   MULTI-STEP FORM
+   ==================================== */
+
+.progress-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.progress-step.active {
+    opacity: 1;
+}
+
+.progress-step.completed {
+    opacity: 0.8;
+}
+
+.progress-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--dusty-rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dusty-rose);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .progress-circle {
+    background: var(--dusty-rose);
+    color: white;
+    transform: scale(1.1);
+}
+
+.progress-step.completed .progress-circle {
+    background: var(--sage-green);
+    border-color: var(--sage-green);
+    color: white;
+}
+
+.progress-step.completed .progress-circle::after {
+    content: '✓';
+    position: absolute;
+}
+
+.progress-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+
+.progress-line {
+    width: 80px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 10px;
+    margin-bottom: 35px;
+    transition: background 0.3s ease;
+}
+
+.progress-step.completed + .progress-line {
+    background: var(--sage-green);
+}
+
+.multi-step-form {
+    position: relative;
+    min-height: 400px;
+}
+
+.form-step {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideIn 0.4s ease;
+}
+
+.form-step.exiting {
+    animation: slideOut 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+.step-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    color: var(--dusty-rose);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.step-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.step-buttons .cta-button {
+    flex: 1;
+}
+
+/* Timeline Buttons */
+.timeline-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.timeline-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 85px;
+}
+
+.timeline-card:hover .timeline-content {
+    border-color: var(--dusty-rose);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card input[type="radio"]:checked + .timeline-content {
+    background: var(--dusty-rose);
+    border-color: var(--dusty-rose);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 165, 165, 0.3);
+}
+
+.timeline-period {
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.timeline-label {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .timeline-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Alteration Checkboxes */
+.alteration-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.checkbox-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 100px;
+}
+
+.checkbox-card:hover .checkbox-content {
+    border-color: var(--dusty-rose);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-card input[type="checkbox"]:checked + .checkbox-content {
+    background: var(--dusty-rose);
+    border-color: var(--dusty-rose);
+    color: white;
+}
+
+.checkbox-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .alteration-checkboxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .progress-indicator {
+        padding: 0 10px;
+    }
+
+    .progress-line {
+        width: 40px;
+    }
+
+    .progress-label {
+        font-size: 11px;
+    }
+
+    .step-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .alteration-checkboxes {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ====================================
