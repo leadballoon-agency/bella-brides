@@ -101,10 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.step-next').forEach(button => {
         button.addEventListener('click', function() {
             if (validateStep(currentStep)) {
-                // Track form progress with Facebook Pixel
+                // Track assessment start when user completes Step 1
                 if (currentStep === 1) {
-                    // User completed Step 1 (entered name) - this is a Lead event
-                    trackFBEvent('Lead', { content_name: 'Form Step 1 Complete' });
+                    trackFBEvent('InitiateCheckout', {
+                        content_name: 'Assessment Started',
+                        content_category: 'Booking Form'
+                    });
                 }
 
                 if (currentStep < 4) {

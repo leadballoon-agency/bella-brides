@@ -8,25 +8,26 @@ We're using a **minimal tracking approach** focused only on conversion events th
 
 ## 📊 Events Being Tracked
 
-### 1. **PageView** (Automatic)
+### 1. **PageView** (Browser Pixel - Automatic)
 - **When:** User lands on bridalalterations.london
 - **Purpose:** Track all visitors from ads
 - **Setup:** Automatic with pixel base code
+- **Status:** ✅ Active
 
-### 2. **Lead** (Custom)
-- **When:** User completes Step 1 of booking form (enters name and clicks "Next")
-- **Purpose:** Signal to Facebook that user is engaged and worth optimizing for
-- **Setup:** Already implemented in script.js
-- **Code:**
-```javascript
-trackFBEvent('Lead', { content_name: 'Form Step 1 Complete' });
-```
+### 2. **InitiateCheckout** (Browser Pixel - Custom)
+- **When:** User completes Step 1 (enters name, clicks "Next")
+- **Purpose:** Track assessment starts - early engagement signal for Facebook
+- **Setup:** Client-side tracking in script.js
+- **Status:** ✅ Active
+- **Why:** Helps Facebook optimize for users who engage with form
 
-### 3. **CompleteRegistration** (To Be Added - GHL Integration)
+### 3. **Lead** (GHL CAPI - Server-Side)
 - **When:** User books consultation via GHL calendar (Step 4)
-- **Purpose:** Primary conversion event - optimize ads for this
-- **Setup:** Needs GHL webhook or thank you page redirect
-- **Priority:** HIGH - this is your main conversion goal
+- **Purpose:** PRIMARY conversion event - actual bookings
+- **Setup:** GHL Conversions API integration
+- **Priority:** HIGH - optimize ads for this event
+- **Status:** ⚠️ Configure in GHL Settings → Integrations → Meta CAPI
+- **Data Sent:** Email, phone, name, appointment details (hashed, server-side)
 
 ---
 
@@ -61,103 +62,67 @@ src="https://www.facebook.com/tr?id=1234567890123456&ev=PageView&noscript=1" // 
    - ✅ PageView event fired
    - ✅ Pixel ID matches yours
 
-### Step 4: Test Lead Event
+### Step 4: Configure GHL CAPI Integration
 
-1. Go to booking form on site
-2. Enter name in Step 1
-3. Click "Next Step"
-4. Pixel Helper should show "Lead" event fired
-5. In Facebook Events Manager → Data Sources → Your Pixel → Test Events
-   - Should see the Lead event appear
+**In GoHighLevel:**
+1. Go to Settings → Integrations → Meta (Facebook) Conversions API
+2. Add your Meta Pixel ID: `851810164179151`
+3. Generate Access Token from Meta Business Settings
+4. Map GHL fields to Meta parameters:
+   - Email → em
+   - Phone → ph
+   - First Name → fn
+   - Last Name → ln
+5. Select event to fire: **Lead** (when appointment booked)
+6. Save configuration
+
+**Test:**
+1. Complete full booking flow on site
+2. Check GHL webhook logs for successful CAPI call
+3. Verify in Meta Events Manager → Test Events
+   - Should see "Lead" event with server-side source
 
 ---
 
-## 🎯 GHL Calendar Integration (PRIMARY CONVERSION)
+## 🎯 Why GHL CAPI is Better
 
-### The Challenge
-When user completes Step 4 (calendar booking), they're redirected to GHL's domain. We need to fire the `CompleteRegistration` event **before** they leave our site OR via a thank you page redirect.
+**Server-Side Tracking Benefits:**
+- ✅ Works with iOS 14+ tracking restrictions
+- ✅ Not affected by ad blockers
+- ✅ More accurate data (email, phone hashing)
+- ✅ No redirect needed (stays in iframe)
+- ✅ Automatic - no custom code required
 
-### Option A: GHL Webhook (Recommended)
-**Best for:** Server-side tracking, most reliable
-
-1. In GHL, set up webhook for "Appointment Booked" event
-2. Webhook sends to your server endpoint
-3. Server fires Facebook Conversions API event
-
-**Pros:**
-- Works even with iOS tracking restrictions
-- Most reliable
-- Can capture additional data (email, phone)
-
-**Cons:**
-- Requires server/backend setup
-
-### Option B: Thank You Page Redirect
-**Best for:** Quick setup, no backend needed
-
-1. In GHL calendar settings, set custom thank you page URL:
-   - `https://bridalalterations.london/thank-you.html`
-2. Create `thank-you.html` page with:
-```html
-<script>
-fbq('track', 'CompleteRegistration', {
-    content_name: 'Consultation Booked',
-    value: 20.00, // estimated value of lead
-    currency: 'GBP'
-});
-</script>
-```
-
-**Pros:**
-- Simple, no backend needed
-- Works immediately
-
-**Cons:**
-- User might close window before pixel fires
-- Affected by ad blockers
-
-### Option C: Calendar Iframe Load Detection (Fallback)
-**Best for:** Backup tracking
-
-Detect when GHL calendar iframe loads confirmation screen:
-```javascript
-// In script.js - monitor iframe for booking confirmation
-// This is approximate but better than nothing
-```
-
-**Recommendation:** Use **Option B** (Thank You Page) to start, then upgrade to **Option A** (Webhook) when you have budget for server setup.
+**Setup Location in GHL:**
+Settings → Integrations → Conversions API → Meta (Facebook)
 
 ---
 
 ## 📁 Files Modified
 
 ### 1. `index.html`
-- Added Facebook Pixel base code in `<head>` (lines 41-57)
+- Added Meta Pixel base code in `<head>` (lines 41-57)
+- Pixel ID: 851810164179151
 - Fires automatic `PageView` on every page load
 
 ### 2. `script.js`
 - Removed all unnecessary tracking (scroll depth, CTA clicks, FAQ clicks, field focus)
-- Added `trackFBEvent()` helper function (line 264-268)
-- Added `Lead` event on Step 1 completion (line 107)
-
-### 3. `thank-you.html` (TO BE CREATED)
-- Simple thank you page with `CompleteRegistration` event
-- Shows confirmation message
-- Fires conversion pixel
+- Clean implementation - only PageView tracking
+- Lead event handled by GHL CAPI (server-side)
 
 ---
 
 ## ✅ Quick Checklist
 
 Before launching ads:
-- [ ] Replace `YOUR_PIXEL_ID_HERE` with actual Pixel ID (2 places in index.html)
-- [ ] Test pixel with Facebook Pixel Helper extension
-- [ ] Test Lead event (complete Step 1 of form)
-- [ ] Create thank-you.html page
-- [ ] Configure GHL to redirect to thank-you.html after booking
+- [x] Add Pixel ID (851810164179151) to index.html
+- [ ] Test pixel with Meta Pixel Helper extension
+- [ ] Configure GHL CAPI integration (Settings → Integrations → Meta)
+- [ ] Add Meta Access Token in GHL
+- [ ] Map GHL fields to Meta parameters
 - [ ] Test complete booking flow end-to-end
-- [ ] Verify CompleteRegistration event fires in Events Manager
-- [ ] Set up Custom Conversion in Facebook for "Consultation Booked"
+- [ ] Verify Lead event fires in Events Manager (server-side source)
+- [ ] Set up ad campaign with Lead conversion objective
 
 ---
 
