@@ -57,7 +57,7 @@ body {
     min-height: 700px;
     background:
         linear-gradient(135deg, rgba(212, 165, 165, 0.75) 0%, rgba(168, 181, 160, 0.75) 100%),
-        url('Public/Images/IMG-20250925-WA0001.jpg');
+        url('Public/Images/hero.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
