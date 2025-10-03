@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.step-next').forEach(button => {
         button.addEventListener('click', function() {
             if (validateStep(currentStep)) {
+                // Track form progress with Facebook Pixel
+                if (currentStep === 1) {
+                    // User completed Step 1 (entered name) - this is a Lead event
+                    trackFBEvent('Lead', { content_name: 'Form Step 1 Complete' });
+                }
+
                 if (currentStep < 4) {
                     currentStep++;
                     showStep(currentStep);
@@ -259,58 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Track scroll depth for analytics
-let maxScroll = 0;
-
-window.addEventListener('scroll', function() {
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-
-    if (scrollPercent > maxScroll) {
-        maxScroll = Math.round(scrollPercent);
-
-        // Log milestone scrolls (25%, 50%, 75%, 100%)
-        if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 100) {
-            console.log(`Scroll depth: ${maxScroll}%`);
-            // In production: send to analytics
-            // ga('send', 'event', 'Scroll Depth', maxScroll + '%');
-        }
+// Facebook Pixel Tracking
+// Make sure fbq is available (loaded via pixel in HTML head)
+function trackFBEvent(eventName, params = {}) {
+    if (typeof fbq !== 'undefined') {
+        fbq('track', eventName, params);
     }
-});
-
-// Track CTA button clicks
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('cta-button')) {
-        const buttonText = e.target.textContent;
-        const section = e.target.closest('section')?.id || 'unknown';
-
-        console.log('CTA clicked:', {
-            button: buttonText,
-            section: section
-        });
-        // In production: send to analytics
-        // ga('send', 'event', 'CTA Click', buttonText, section);
-    }
-});
-
-// Track form field interactions
-document.addEventListener('focus', function(e) {
-    if (e.target.matches('#bookingForm input, #bookingForm select, #bookingForm textarea')) {
-        const fieldName = e.target.name || e.target.id;
-        console.log('Form field focused:', fieldName);
-        // In production: send to analytics
-        // ga('send', 'event', 'Form', 'Field Focus', fieldName);
-    }
-}, true);
-
-// FAQ analytics
-document.addEventListener('click', function(e) {
-    if (e.target.matches('.faq-item summary')) {
-        const question = e.target.textContent;
-        console.log('FAQ clicked:', question);
-        // In production: send to analytics
-        // ga('send', 'event', 'FAQ', 'Question Opened', question);
-    }
-});
+}
 
 // Add CSS for animations
 const style = document.createElement('style');
